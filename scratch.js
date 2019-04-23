@@ -1,35 +1,18 @@
-function myAtoi(str) {
-  str = str.trim();
-  const digits = "0123456789";
-  const hashMap = digits.split("").reduce((obj, next, i) => {
-    obj[next] = i;
-    return obj;
-  }, {});
-  let sign = 1;
+var maxArea = function(height) {
+  let maxArea = 0;
+  let start = 0;
+  let end = height.length - 1;
 
-  if (str[0] === "-") {
-    sign = -1;
-    str = str.slice(1);
-  } else if (str[0] === "+") {
-    str = str.slice(1);
-  } else if (hashMap[str[0]] === undefined) {
-    return 0;
-  }
+  while (start < end) {
+    const currentArea = Math.min(height[start], height[end]) * (end - start);
+    maxArea = Math.max(maxArea, currentArea);
 
-  let res = 0;
-
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    if (hashMap[char] !== undefined) {
-      res = res * 10 + hashMap[char];
+    if (height[start] < height[end]) {
+      start++;
     } else {
-      break;
+      end--;
     }
   }
 
-  res = res > 2147483648 ? 2147483648 : res;
-  console.log("reached");
-  return sign * res;
-}
-
-myAtoi("  0000000000012345678");
+  return maxArea;
+};
