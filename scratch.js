@@ -1,18 +1,26 @@
-var maxArea = function(height) {
-  let maxArea = 0;
-  let start = 0;
-  let end = height.length - 1;
+var romanToInt = function(s) {
+  let sum = 0;
 
-  while (start < end) {
-    const currentArea = Math.min(height[start], height[end]) * (end - start);
-    maxArea = Math.max(maxArea, currentArea);
+  const romanToIntMap = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  };
 
-    if (height[start] < height[end]) {
-      start++;
-    } else {
-      end--;
-    }
-  }
+  if (s.indexOf("IV")) sum -= 2;
+  if (s.indexOf("IX")) sum -= 2;
+  if (s.indexOf("XL")) sum -= 20;
+  if (s.indexOf("XC")) sum -= 20;
+  if (s.indexOf("CD")) sum -= 200;
+  if (s.indexOf("CM")) sum -= 200;
 
-  return maxArea;
+  s.split("").forEach(char => {
+    sum += romanToIntMap[char];
+  });
+
+  return sum;
 };
