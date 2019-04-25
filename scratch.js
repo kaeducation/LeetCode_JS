@@ -1,3 +1,11 @@
-const yo = { c: "meow" };
-console.log("yo.c", yo.c);
-console.log("yo.C", yo.C);
+const longestCommonPrefix = function(strs) {
+  let prefix = strs.length ? strs[0] : "";
+
+  strs.forEach(str => {
+    while (str.indexOf(prefix) !== 0) {
+      prefix = prefix.slice(0, -1);
+    }
+  });
+
+  return prefix;
+};
