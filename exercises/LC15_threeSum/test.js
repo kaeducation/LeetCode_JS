@@ -10,9 +10,7 @@ describe("No duplicate results returned", () => {
   });
 
   test("threeSum([-1, 0, 1, 2, -1, -4]) returns [ [-1, 0, 1], [-1, -1, 2] ]", () => {
-    expect(
-      threeSum([-1, 0, 1, 2, -1, -4]).sort((a, b) => a - b).length
-    ).toEqual(2);
+    expect(threeSum([-1, 0, 1, 2, -1, -4]).length).toEqual(2);
 
     const intial = threeSum([-1, 0, 1, 2, -1, -4]);
     const res = [...intial[0], ...intial[1]].sort((a, b) => a - b);
