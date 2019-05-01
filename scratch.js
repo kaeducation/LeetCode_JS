@@ -1,14 +1,14 @@
-var maxProfit = function(prices) {
-  let maxProfit = 0;
-  let cheapestPrice = prices[0];
+var containsDuplicate = function(nums) {
+  const hashMap = {};
 
-  for (let i = 0; i < prices.length; i++) {
-    const price = prices[i];
-    if (price < cheapestPrice) cheapestPrice = price;
-
-    const currentProfit = price - cheapestPrice;
-    maxProfit = Math.max(currentProfit, maxProfit);
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i];
+    if (hashMap[num]) {
+      return true;
+    } else {
+      hashMap[num] = true;
+    }
   }
 
-  return maxProfit;
+  return false;
 };
