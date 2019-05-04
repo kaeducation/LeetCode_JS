@@ -17,5 +17,5 @@ test("returns 0 on int overflow for positive number", () => {
 });
 
 test("returns 0 on int overflow for negative number", () => {
-  expect(reverse(-2147483649) * -1).toEqual(0);
+  expect(reverse(-2147483649)).toEqual(0);
 });
