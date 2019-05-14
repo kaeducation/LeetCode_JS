@@ -1,15 +1,32 @@
-const invertTree = root => {
-  const helper = root => {
-    if (!root) return;
+const numIslands = grid => {
+  let count = 0;
 
-    let temp = root.left;
-    root.left = root.right;
-    root.right = temp;
+  for (let col = 0; col < grid.length; col++) {
+    for (let row = 0; row < grid[0].length; row++) {
+      if (grid[col][row] === "1") {
+        count++;
+        dfs(grid, col, row);
+      }
+    }
+  }
 
-    helper(root.left);
-    helper(root.right);
-  };
+  function dfs(grid, col, row) {
+    if (
+      col < 0 ||
+      col >= grid.length ||
+      row < 0 ||
+      row >= grid[0].length ||
+      grid[col][row] === "0"
+    ) {
+      return;
+    }
 
-  helper(root);
-  return root;
+    grid[col][row] = "0";
+    dfs(grid, col + 1, row);
+    dfs(grid, col - 1, row);
+    dfs(grid, col, row + 1);
+    dfs(grid, col, row - 1);
+  }
+
+  return count;
 };
