@@ -1,4 +1,4 @@
-var eraseOverlapIntervals = function(intervals) {
+const eraseOverlapIntervals = intervals => {
   if (intervals.length === 0) return 0;
 
   let count = 0;
@@ -22,3 +22,5 @@ var eraseOverlapIntervals = function(intervals) {
 
   return count;
 };
+
+module.exports = eraseOverlapIntervals;
