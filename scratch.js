@@ -1,24 +1,47 @@
-var eraseOverlapIntervals = function(intervals) {
-  if (intervals.length === 0) return 0;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
 
-  let count = 0;
-
-  intervals.sort((a, b) => a[0] - b[0]);
-
-  let end = intervals[0][1];
-
-  for (let i = 1; i < intervals.length; i++) {
-    const interval = intervals[i];
-    const intervalStart = interval[0];
-    const intervalEnd = interval[1];
-
-    if (intervalStart < end) {
-      count++;
-      end = Math.min(intervalEnd, end);
-    } else {
-      end = intervalEnd;
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+  insert(value) {
+    let newNode = new Node(value);
+    if (!this.root) {
+      this.root = newNode;
+      return;
+    }
+    let current = this.root;
+    while (true) {
+      if (value === current.value) {
+        return;
+      }
+      if (value < current.value) {
+        if (!current.left) {
+          current.left = newNode;
+          return;
+        } else {
+          current = current.left;
+        }
+      } else {
+        if (!current.right) {
+          current.right = newNode;
+          return;
+        } else {
+          current = current.right;
+        }
+      }
     }
   }
+}
 
-  return count;
-};
+const BST = new BinarySearchTree();
+BST.insert(8);
+BST.insert(3);
+BST.insert(10);
+BST.root.right.left = new Node(6);
