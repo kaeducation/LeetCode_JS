@@ -7,22 +7,6 @@
 // reverse(2147483649) --> 0
 // reverse(-2147483649) --> 0
 
-function reverse(x) {
-  let abs = Math.abs(x);
-
-  let reversed = 0;
-
-  while (abs > 0) {
-    const pop = abs % 10;
-    abs = Math.floor(abs / 10);
-    reversed = reversed * 10 + pop;
-  }
-
-  reversed = x < 0 ? reversed * -1 : reversed;
-  if (reversed > 2 ** 31 - 1 || reversed < -1 * 2 ** 31) {
-    return 0;
-  }
-  return reversed;
-}
+function reverse(x) {}
 
 module.exports = reverse;
