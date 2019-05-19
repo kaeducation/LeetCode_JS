@@ -1,3 +1,3 @@
-const rob = nums => {};
+function rob(nums) {}
 
 module.exports = rob;
