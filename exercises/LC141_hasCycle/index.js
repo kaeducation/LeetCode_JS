@@ -1,3 +1,3 @@
-const hasCycle = head => {};
+function hasCycle(head) {}
 
 module.exports = hasCycle;
