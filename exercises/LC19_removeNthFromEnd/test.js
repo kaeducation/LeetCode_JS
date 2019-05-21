@@ -31,6 +31,5 @@ test("removeNthFromEnd([5,4,3,2,1], 2) becomes [5,4,3,1]", () => {
 });
 
 test("removeNthFromEnd([1], 1) becomes []", () => {
-  const startingLL = convertIntToLL("1");
-  expect(convertLLToArr(removeNthFromEnd(startingLL, 1))).toEqual([]);
+  expect(removeNthFromEnd({ val: "meow", next: null }, 1)).toEqual(null);
 });
