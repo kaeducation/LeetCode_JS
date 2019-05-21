@@ -1,3 +1,3 @@
-const numIslands = grid => {};
+function numIslands(grid) {}
 
 module.exports = numIslands;
