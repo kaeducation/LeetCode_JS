@@ -70,10 +70,5 @@ test("[1,3], [] returns head of [1,3]", () => {
 });
 
 test("[], [] returns head of []", () => {
-  const odds = new LinkedList();
-  const evens = new LinkedList();
-
-  const resList = convertLLToArr(mergeTwoLists(odds.head, evens.head));
-
-  expect(resList).toEqual([]);
+  expect(mergeTwoLists(null, null)).toEqual(null);
 });
