@@ -11,3 +11,7 @@ test("'love' returns false", () => {
 test("'' returns true", () => {
   expect(isPalindrome("")).toEqual(true);
 });
+
+test("'_a__' returns true", () => {
+  expect(isPalindrome("_a__")).toEqual(true);
+});
