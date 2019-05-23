@@ -1,3 +1,3 @@
-const invertTree = root => {};
+function invertTree(root) {}
 
 module.exports = invertTree;
