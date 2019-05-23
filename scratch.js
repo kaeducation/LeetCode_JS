@@ -1,43 +1,17 @@
-function exist(board, word) {
-  let found = false;
+function coinChange(coins, amount) {
+  let dpMinCoins = new Array(amount + 1).fill(Infinity);
+  dpMinCoins[0] = 0;
 
-  for (let row = 0; row < board.length; row++) {
-    for (let col = 0; col < board[0].length; col++) {
-      if (board[row][col] === word[0]) {
-        dfs(row, col, 0, word);
+  for (let i = 0; i < dpMinCoins.length; i++) {
+    for (let j = 0; j < coins.length; j++) {
+      const coinValue = coins[j];
+      if (coinValue <= i) {
+        dpMinCoins[i] = Math.min(dpMinCoins[i - coinValue] + 1, dpMinCoins[i]);
       }
     }
   }
 
-  function dfs(row, col, count, word) {
-    if (count === word.length) {
-      found = true;
-      return;
-    }
-
-    if (
-      row < 0 ||
-      row >= board.length ||
-      col < 0 ||
-      col >= board[0].length ||
-      board[row][col] !== word[count] ||
-      found
-    ) {
-      return;
-    }
-
-    let temp = board[row][col];
-    board[row][col] = "";
-
-    dfs(row + 1, col, count + 1, word);
-    dfs(row - 1, col, count + 1, word);
-    dfs(row, col + 1, count + 1, word);
-    dfs(row, col - 1, count + 1, word);
-
-    board[row][col] = temp;
-  }
-
-  return found;
+  return dpMinCoins[dpMinCoins.length - 1] === Infinity
+    ? -1
+    : dpMinCoins[dpMinCoins.length - 1];
 }
-
-exist(["a"], "ab");
