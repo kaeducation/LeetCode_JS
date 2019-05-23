@@ -49,14 +49,12 @@ test("Works for Binary Trees of with 1, 2, and 3 levels.", () => {
   BST.insert(3);
   BST.insert(10);
   expect(maxDepth(BST.root)).toEqual(2);
-  BST.insert(1);
-  BST.insert(6);
   BST.insert(14);
   //          8
   //        /   \
   //       3     10
   //      / \      \
-  //     1   6     14
+  //               14
   expect(maxDepth(BST.root)).toEqual(3);
 });
 

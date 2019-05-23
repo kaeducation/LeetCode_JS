@@ -1,3 +1,3 @@
-const maxDepth = root => {};
+function maxDepth(root) {}
 
 module.exports = maxDepth;
