@@ -1,22 +1,43 @@
-function uniquePaths(m, n) {
-  const dpMatrix = [];
-  for (let row = 1; row <= n; row++) {
-    dpMatrix.push([]);
-  }
+function exist(board, word) {
+  let found = false;
 
-  for (let row = 0; row < n; row++) {
-    dpMatrix[row][0] = 1;
-  }
-
-  for (let col = 0; col < m; col++) {
-    dpMatrix[0][col] = 1;
-  }
-
-  for (let row = 1; row < n; row++) {
-    for (let col = 1; col < m; col++) {
-      dpMatrix[row][col] = dpMatrix[row][col - 1] + dpMatrix[row - 1][col];
+  for (let row = 0; row < board.length; row++) {
+    for (let col = 0; col < board[0].length; col++) {
+      if (board[row][col] === word[0]) {
+        dfs(row, col, 0, word);
+      }
     }
   }
 
-  return dpMatrix[dpMatrix.length - 1][m - 1];
+  function dfs(row, col, count, word) {
+    if (count === word.length) {
+      found = true;
+      return;
+    }
+
+    if (
+      row < 0 ||
+      row >= board.length ||
+      col < 0 ||
+      col >= board[0].length ||
+      board[row][col] !== word[count] ||
+      found
+    ) {
+      return;
+    }
+
+    let temp = board[row][col];
+    board[row][col] = "";
+
+    dfs(row + 1, col, count + 1, word);
+    dfs(row - 1, col, count + 1, word);
+    dfs(row, col + 1, count + 1, word);
+    dfs(row, col - 1, count + 1, word);
+
+    board[row][col] = temp;
+  }
+
+  return found;
 }
+
+exist(["a"], "ab");
