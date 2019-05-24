@@ -1,3 +1,3 @@
-const levelOrder = root => {};
+function levelOrder(root) {}
 
 module.exports = levelOrder;
