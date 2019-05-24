@@ -1,3 +1,3 @@
-const isValidBST = root => {};
+function isValidBST(root) {}
 
 module.exports = isValidBST;
