@@ -1,3 +1,3 @@
-const lengthOfLIS = nums => {};
+function lengthOfLIS(nums) {}
 
 module.exports = lengthOfLIS;
