@@ -1,17 +1,15 @@
-function coinChange(coins, amount) {
-  let dpMinCoins = new Array(amount + 1).fill(Infinity);
-  dpMinCoins[0] = 0;
+function canJump(nums) {
+  let dpPositions = new Array(nums.length).fill(false);
+  dpPositions[0] = true;
 
-  for (let i = 0; i < dpMinCoins.length; i++) {
-    for (let j = 0; j < coins.length; j++) {
-      const coinValue = coins[j];
-      if (coinValue <= i) {
-        dpMinCoins[i] = Math.min(dpMinCoins[i - coinValue] + 1, dpMinCoins[i]);
+  for (let j = 1; j < nums.length; j++) {
+    for (let i = 0; i < j; i++) {
+      if (dpPositions[i] && i + nums[i] >= j) {
+        dpPositions[j] = true;
+        break;
       }
     }
   }
 
-  return dpMinCoins[dpMinCoins.length - 1] === Infinity
-    ? -1
-    : dpMinCoins[dpMinCoins.length - 1];
+  return dpPositions.pop();
 }
