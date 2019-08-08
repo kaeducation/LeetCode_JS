@@ -5,7 +5,7 @@ test("[-2, 3, -4] --> 24", () => {
 });
 
 test("[-4, -3, -2] --> 12", () => {
-  expect(maxProduct([-2, -3, -4])).toEqual(12);
+  expect(maxProduct([-4, -3, -2])).toEqual(12);
 });
 
 test("[-2, -3, 7] --> 42", () => {
