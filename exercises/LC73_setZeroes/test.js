@@ -15,3 +15,15 @@ test("works", () => {
   setZeroes(inputMatrix);
   expect(inputMatrix).toEqual([[1, 0, 1], [0, 0, 0], [1, 0, 1]]);
 });
+
+test("one-row matrix", () => {
+  let inputMatrix = [[1, 0]];
+  setZeroes(inputMatrix);
+  expect(inputMatrix).toEqual([[0, 0]]);
+});
+
+test("one-column matrix", () => {
+  inputMatrix = [[0], [1]];
+  setZeroes(inputMatrix);
+  expect(inputMatrix).toEqual([[0], [0]]);
+});
