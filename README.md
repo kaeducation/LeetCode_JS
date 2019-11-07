@@ -1,8 +1,8 @@
 # JavaScript & LeetCode: The Ultimate Interview Bootcamp
 
-This is the template code for the [JavaScript & LeetCode: The Ultimate Interview Bootcamp course](https://www.udemy.com/ultimate-javascript-leetcode-interview-bootcamp/).
+This is the template code for [JavaScript & LeetCode: The Ultimate Interview Bootcamp](https://www.udemy.com/course/ultimate-javascript-leetcode-interview-bootcamp/?referralCode=6B683FD41E9DEDE9FF4C).
 
-## Pre-requisites
+## Prerequisites
 * [Node.js/npm](https://nodejs.org/en/)
 * [jest](https://www.npmjs.com/package/jest)
 
