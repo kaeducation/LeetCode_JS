@@ -1,3 +1,6 @@
+// This is an exclusive problem only available in the Deluxe version of this course.
+// To learn more, visit https://kaeducation.com/lc-js.html
+
 // Design an algorithm to encode a list of strings to a string. The
 // encoded string is then sent over the network and is decoded back to
 // the original list of strings.

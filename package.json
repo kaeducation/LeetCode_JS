@@ -10,6 +10,6 @@
 		"testEnvironment": "node"
 	},
 	"author": "",
-	"license": "ISC",
+	"license": "GPLv3",
 	"dependencies": {}
 }
