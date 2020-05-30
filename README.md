@@ -1,5 +1,7 @@
 # JavaScript & LeetCode: The Interview Bootcamp
 
+<img src="https://static.kaeducation.com/lc-js.jpg" width="400">
+
 This is the shared course code repository for:
 * 🥇 JavaScript & LeetCode: The **Deluxe** Interview Bootcamp *(Coming Soon!)*
 * 🥈 JavaScript & LeetCode: The **Complete** Interview Bootcamp
